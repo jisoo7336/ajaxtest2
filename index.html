@@ -19,121 +19,55 @@
 </head>
 
 <body>
-  <h1>도서 API</h1>
+  <header>
+    <h1>도서 API</h1>
+  </header>
 
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
+  <section>
+
+    <h3>관련 도서</h3>
+
+    <section name="" id="book">
+      <option value="a" selected></option>
+      <option value="b"></option>
+      <option value="c"></option>
+      <option value="d"></option>
+      <option value="e"></option>
+      <option value="f"></option>
+      <option value="g"></option>
+      <option value="l"></option>
+
+    </section>
+
+    <div id="new">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+
+  </section>  
+
+  <footer>
+    <p>Copyright ⓒ INTERPARK Corporation All rights reserved.
+    <p>
+  </footer>
 
   <script>
     $.ajax({
             method: "GET",
             url: "https://dapi.kakao.com/v3/search/book?target=title",
-            data: { query: "미움받을 용기"},
+            data: { query: "고양이", size:50},
             headers: { Authorization: "KakaoAK 643f2358329674ed949b49f42ed9fd51" }
         })
             .done(function (msg) {
 
-              $(".box:nth-of-type(1)").append("<img src='"+ msg.documents[0].thumbnail+"'/>");
-              $(".box:nth-of-type(1)").append("<h3>"+ msg.documents[0].title+"</h3>");
-              $(".box:nth-of-type(1)").append("<h6>"+ msg.documents[0].authors[0]+"</h6>");
-
-              var str = msg.documents[0].contents;
-              var str2 = str.substring(0, 60);
-
-              $(".box:nth-of-type(1)").append("<p>"+ str2+"</p>");
-              $(".box:nth-of-type(1)").append("<button>"+"click"+"</button>");
-
-
-
-              $(".box:nth-of-type(2)").append("<img src='"+ msg.documents[1].thumbnail+"'/>");
-              $(".box:nth-of-type(2)").append("<h3>"+ msg.documents[1].title+"</h3>");
-              $(".box:nth-of-type(2)").append("<h6>"+ msg.documents[1].authors[0]+"</h6>");
-
-              var str = msg.documents[1].contents;
-              var str2 = str.substring(0, 60);
-
-              $(".box:nth-of-type(2)").append("<p>"+ str2+"</p>");
-              $(".box:nth-of-type(2)").append("<button>"+"click"+"</button>");
-
-             
-
-              $(".box:nth-of-type(3)").append("<img src='"+ msg.documents[8].thumbnail+"'/>");
-              $(".box:nth-of-type(3)").append("<h3>"+ msg.documents[8].title+"</h3>");
-              $(".box:nth-of-type(3)").append("<h6>"+ msg.documents[8].authors[0]+"</h6>");
-
-              var str = msg.documents[8].contents;
-              var str2 = str.substring(0, 60);
-
-              $(".box:nth-of-type(3)").append("<p>"+ str2+"</p>");
-              $(".box:nth-of-type(3)").append("<button>"+"click"+"</button>");
-
-
-
-              $(".box:nth-of-type(4)").append("<img src='"+ msg.documents[3].thumbnail+"'/>");
-              $(".box:nth-of-type(4)").append("<h3>"+ msg.documents[3].title+"</h3>");
-              $(".box:nth-of-type(4)").append("<h6>"+ msg.documents[3].authors[0]+"</h6>");
-
-              var str = msg.documents[3].contents;
-              var str2 = str.substring(0, 60);
-
-              $(".box:nth-of-type(4)").append("<p>"+ str2+"</p>");
-              $(".box:nth-of-type(4)").append("<button>"+"click"+"</button>");
-
-
-
-              $(".box:nth-of-type(5)").append("<img src='"+ msg.documents[4].thumbnail+"'/>");
-              $(".box:nth-of-type(5)").append("<h3>"+ msg.documents[4].title+"</h3>");
-              $(".box:nth-of-type(5)").append("<h6>"+ msg.documents[4].authors[0]+"</h6>");
-
-              var str = msg.documents[4].contents;
-              var str2 = str.substring(0, 60);
-
-              $(".box:nth-of-type(5)").append("<p>"+ str2+"</p>");
-              $(".box:nth-of-type(5)").append("<button>"+"click"+"</button>");
-
-
-
-              $(".box:nth-of-type(6)").append("<img src='"+ msg.documents[5].thumbnail+"'/>");
-              $(".box:nth-of-type(6)").append("<h3>"+ msg.documents[5].title+"</h3>");
-              $(".box:nth-of-type(6)").append("<h6>"+ msg.documents[5].authors[0]+"</h6>");
-
-              var str = msg.documents[5].contents;
-              var str2 = str.substring(0, 60);
-
-              $(".box:nth-of-type(6)").append("<p>"+ str2+"</p>");
-              $(".box:nth-of-type(6)").append("<button>"+"click"+"</button>");
-
-
-
-              $(".box:nth-of-type(7)").append("<img src='"+ msg.documents[6].thumbnail+"'/>");
-              $(".box:nth-of-type(7)").append("<h3>"+ msg.documents[6].title+"</h3>");
-              $(".box:nth-of-type(7)").append("<h6>"+ msg.documents[6].authors[0]+"</h6>");
-
-              var str = msg.documents[6].contents;
-              var str2 = str.substring(0, 60);
-
-              $(".box:nth-of-type(7)").append("<p>"+ str2+"</p>");
-              $(".box:nth-of-type(7)").append("<button>"+"click"+"</button>");
-
-
-
-              $(".box:nth-of-type(8)").append("<img src='"+ msg.documents[7].thumbnail+"'/>");
-              $(".box:nth-of-type(8)").append("<h3>"+ msg.documents[7].title+"</h3>");
-              $(".box:nth-of-type(8)").append("<h6>"+ msg.documents[7].authors[0]+"</h6>");
-
-              var str = msg.documents[7].contents;
-              var str2 = str.substring(0, 60);
-
-              $(".box:nth-of-type(8)").append("<p>"+ str2+"</p>");
-              $(".box:nth-of-type(8)").append("<button>"+"click"+"</button>");
-
-
+              
+              
             });
 
 
