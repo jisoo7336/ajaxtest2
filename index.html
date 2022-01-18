@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,20 +8,28 @@
   <title>API 연습</title>
   <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
 </head>
+
 <body>
   <h1>도서 API</h1>
- 
+  <p></p>
+
   <script>
     $.ajax({
       method:"GET",
-      url:"https://dapi.kakao.com/v3/search/book?target=title",
-      data:{query:"미움받을 용기"},
-      headers:{Authorization:"KakaoAK643f2358329674ed949b49f42ed9fd51"}
+      url: "https://dapi.kakao.com/v3/search/book?target=title",
+      data: { query:"자바스크립트" },
+      headers: { Authorization:"KakaoAK 643f2358329674ed949b49f42ed9fd51" }
     })
-    .done(function(msg){
-      alert("Data Saved:"+msg);
-    });
-    
+
+      .done(function(msg){
+      console.log(msg.documents[0].title);
+      console.log(msg.documents[0].thumbnail);
+      $("p").append("<strong>"+msg.documents[0].title+"</strong>");
+      $("p").append("<img src='"+msg.documents[0].thumbnail+"'/>");
+      });
+      
+
   </script>
 </body>
+
 </html>
